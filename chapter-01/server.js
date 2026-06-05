@@ -1,6 +1,6 @@
 import express from "express";
 
-// Created a server
+// Created a server instance
 const app = express();
 
 // Creating a route
@@ -15,5 +15,5 @@ app.get("/about", (req, res) => {
 
 // Started the server
 app.listen(3000, () => {
-    console.log("Server is running at http://localhosl:3000");
+    console.log("Server is running at http://localhost:3000");
 });
