@@ -23,7 +23,6 @@ app.post("/notes", (req, res) => {
 
 app.get("/notes", (req, res) => {
     // notes array ko as a response dena hai
-
     res
         .status(200)
         .json({
