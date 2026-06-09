@@ -2,10 +2,12 @@ import express from "express";
 import multer from "multer";
 import { uploadFile } from "./services/storage.service.js";
 import postModel from "./models/post.model.js";
+import cors from 'cors';
 
 const app = express();
 const upload = multer({ storage: multer.memoryStorage() });
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/create-post", upload.single("image"), async (req, res) => {
@@ -52,7 +54,7 @@ app.get("/posts", async (req, res) => {
 
     res.status(200).json({
         message: "All posts fetched successfully!",
-        data: posts,
+        posts: posts,
     });
 });
 
